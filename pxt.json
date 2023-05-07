@@ -1,7 +1,7 @@
 {
-    "name": "microbit-pxt-i2cpins",
-    "version": "0.0.7",
-    "description": "Reroute External I2C Pins",
+    "name": "microbit-pxt-flashstorage",
+    "version": "0.0.1",
+    "description": "Flashstorage access (get/put)",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -18,7 +18,7 @@
     ],
     "public": true,
     "targetVersions": {
-        "target": "4.0.18",
+        "target": "5.0.12",
         "targetId": "microbit"
     },
     "supportedTargets": [
@@ -29,7 +29,7 @@
         "Bill Siever <bsiever@gmail.com>"
     ],
     "card": {
-        "name": "Reroute External I2C pins",
+        "name": "Flashstorage",
         "imageUrl": "file:../icon.png",
         "feedbackUrl": "http://siever.info"
     }

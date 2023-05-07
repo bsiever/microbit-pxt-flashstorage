@@ -1,11 +1,11 @@
 
 
-//% color=#B19200" 
+//% color="#B19200" 
 //% icon="\ue0b7"
 //% block="Flash Storage"
 namespace flashstorage {
 
-    let simMap :any = null
+    let simMap : any = null
 
     //% blockId="flash size remaining" block="flash size remaining"
     //% shim=flashstorage::size
@@ -25,7 +25,7 @@ namespace flashstorage {
     //% blockId="flash get key" block="flash get key %key"
     //% shim=flashstorage::get
     export function get(key: string) : string {
-        return simMap ? simMap.get(key) : "";
+        return simMap ? simMap[key] : "";
     }
 
 
@@ -33,6 +33,6 @@ namespace flashstorage {
     //% shim=flashstorage::put
     export function put(key: string, value: string) {
         if (!simMap) simMap = {};
-        simMap.set(key, value);
+        simMap[key] = value;
     }
 }

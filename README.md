@@ -1,4 +1,4 @@
-# i2c2
+# flashstorage
 
 ```package
 pins=github:bsiever/microbit-pxt-flashstorage
@@ -8,14 +8,11 @@ This extension allows persistent [flash storage](https://lancaster-university.gi
 
 **Storage is usually erased on reprogramming!!!**
 
-
 # Getting the size() 
 
 ```sig
 flashstorage.size() : number
 ```
-
-
 
 # Set a key value pair
 
@@ -42,7 +39,7 @@ If present, remove the given key and associated value.
 # Acknowledgements 
 
 
-Icon based on [Font Awesome icon 0xF074](https://www.iconfinder.com/icons/213043/f074_icon) SVG.
+Icon based on [Font Awesome icon 0xE0B7](https://fontawesome.com/icons/bolt-lightning?f=classic&s=solid) SVG.
 
 <script src="https://makecode.com/gh-pages-embed.js"></script>
 <script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
