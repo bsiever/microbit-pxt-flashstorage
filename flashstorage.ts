@@ -10,15 +10,18 @@ namespace flashstorage {
     //% blockId="flash size remaining" block="flash size remaining"
     //% shim=flashstorage::size
     export function size() : number {
-        // Per https://github.com/microsoft/pxt-microbit/issues/4292
         return simMap ? simMap.size : 0;
     }
 
+    //% blockId="flash get or default" block="flash get %key or use %defaultValue if key not saved"
+    export function getOrDefault(key: string, defaultValue: string): string {
+        let value = get(key)
+        return value.length == 0 ? defaultValue : value;
+    }
 
     //% blockId="flash remove key" block="flash remove key %key"
     //% shim=flashstorage::remove
     export function remove(key: string) : void {
-        // Per https://github.com/microsoft/pxt-microbit/issues/4292
         if (simMap) simMap.delete(key);
     }
 
