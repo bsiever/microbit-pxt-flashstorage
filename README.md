@@ -7,7 +7,7 @@ pins=github:bsiever/microbit-pxt-flashstorage
 This extension allows persistent [flash storage](https://lancaster-university.github.io/microbit-docs/ubit/storage/) to be used from blocks.
 
 **Storage is usually erased on reprogramming!!!**
-
+ 
 # Getting the size() 
 
 ```sig
