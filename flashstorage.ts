@@ -1,14 +1,17 @@
 
 
-//% color=#0000FF 
+//% color=#B19200" 
 //% icon="\ue0b7"
 //% block="Flash Storage"
 namespace flashstorage {
+
+    let simMap :any = null
+
     //% blockId="flash size remaining" block="flash size remaining"
     //% shim=flashstorage::size
     export function size() : number {
         // Per https://github.com/microsoft/pxt-microbit/issues/4292
-        return 0;
+        return simMap ? simMap.size : 0;
     }
 
 
@@ -16,21 +19,20 @@ namespace flashstorage {
     //% shim=flashstorage::remove
     export function remove(key: string) : void {
         // Per https://github.com/microsoft/pxt-microbit/issues/4292
-        0;
+        if (simMap) simMap.delete(key);
     }
 
     //% blockId="flash get key" block="flash get key %key"
     //% shim=flashstorage::get
     export function get(key: string) : string {
-        // Per https://github.com/microsoft/pxt-microbit/issues/4292
-        return "";
+        return simMap ? simMap.get(key) : "";
     }
 
 
     //% blockId="flash put value for key" block="flash put %value for key %key"
     //% shim=flashstorage::put
     export function put(key: string, value: string) {
-        // Per https://github.com/microsoft/pxt-microbit/issues/4292
-        0;
+        if (!simMap) simMap = {};
+        simMap.set(key, value);
     }
 }

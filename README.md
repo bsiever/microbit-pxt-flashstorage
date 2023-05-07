@@ -39,8 +39,6 @@ flashstorage.remove(key : string) : void
 
 If present, remove the given key and associated value.
 
-
-
 # Acknowledgements 
 
 

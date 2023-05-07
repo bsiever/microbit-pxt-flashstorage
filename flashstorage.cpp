@@ -20,27 +20,35 @@ namespace flashstorage {
     
 
     //% 
-    ManagedString get(ManagedString key) {
-        KeyValuePair *pair = uBit.storage.get(key);
+    String get(String key) {
+        if(!key) return PSTR("");
+        KeyValuePair *pair = uBit.storage.get(key->getUTF8Data());
         if (pair == NULL) {
-            return ManagedString("");
+            return PSTR("");
         } else{
-            return ManagedString((char*)pair->value);
+            return PSTR((char*)pair->value);
         }
     }
 
     //% 
-    void remove(ManagedString key) {
-        uBit.storage.remove(key);
+    void remove(String key) {
+        if(!key) return;
+        uBit.storage.remove(key->getUTF8Data());
     }
 
     //% 
     int size() {
+        int size = uBit.storage.size();
         return uBit.storage.size();
     }
 
     //% 
-    void put(ManagedString key, ManagedString value) {
-        uBit.storage.put(key, (uint8_t*)value.toCharArray(), value.length());
+    void put(String key, String value) {
+        if(!key) return;
+        if(!value) {
+            remove(key);
+            return;
+        }
+        uBit.storage.put(key->getUTF8Data(), (uint8_t*)value->getUTF8Data(), value->getUTF8Size());
     }
 }
