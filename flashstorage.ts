@@ -7,7 +7,7 @@ namespace flashstorage {
 
     let simMap : any = null
 
-    //% blockId="flash size remaining" block="flash size remaining"
+    //% blockId="flash pairs stored" block="flash pairs stored"
     //% shim=flashstorage::size
     export function size() : number {
         return simMap ? simMap.size : 0;
