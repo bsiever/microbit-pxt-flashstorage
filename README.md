@@ -4,15 +4,17 @@
 pins=github:bsiever/microbit-pxt-flashstorage
 ```
 
-This extension allows persistent [flash storage](https://lancaster-university.github.io/microbit-docs/ubit/storage/) to be used from blocks.
+Allow persistent [flash storage](https://lancaster-university.github.io/microbit-docs/ubit/storage/) to be used from blocks.
 
-**Storage is usually erased on reprogramming!!!**
+**Storage may be erased on reprogramming!!!**
  
-# Getting the size() 
+# Getting the size
 
 ```sig
 flashstorage.size() : number
 ```
+
+Returns the number of key/value pairs stored.
 
 # Set a key value pair
 
@@ -20,11 +22,15 @@ flashstorage.size() : number
 flashstorage.set(key : string,  value : string) : void
 ```
 
+Sets the given key to the provided value. 
+
 # Getting a value for a key
 
 ```sig
 flashstorage.get(key : string) : string
 ```
+
+If present, returns the value for the given key.  Returns the empty string if the key is not present.
 
 Returns the empty string if there is no value associated with the key (or if the value is actually the empty string)
 
