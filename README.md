@@ -8,7 +8,7 @@ Allow persistent [flash storage](https://lancaster-university.github.io/microbit
 
 **Storage may be erased on reprogramming!!!**
  
-# Getting the size
+# Getting the number of keys stored
 
 ```sig
 flashstorage.size() : number
