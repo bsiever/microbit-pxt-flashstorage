@@ -26,7 +26,9 @@ namespace flashstorage {
         if (pair == NULL) {
             return PSTR("");
         } else{
-            return PSTR((char*)pair->value);
+            String s = PSTR((char*)pair->value);
+            delete pair;
+            return s;
         }
     }
 
@@ -39,7 +41,7 @@ namespace flashstorage {
     //% 
     int size() {
         int size = uBit.storage.size();
-        return uBit.storage.size();
+        return size;
     }
 
     //% 
